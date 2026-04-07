@@ -62,7 +62,7 @@ function RunGitleaksScan(workspacePath, isWorkspaceScan = false) {
 
         const executablePrefix = getExecutablePrefix();
         const executablePath = getExecutablePath(executablePrefix);
-        const command = `${executablePath} detect --log-level error --source ${workspacePath} --no-color --no-banner -v --no-git`;
+        const command = `"${executablePath}" detect --log-level error --source "${workspacePath}" --no-color --no-banner -v --no-git`;
 
         exec(command, (err, stdout, stderr) => {
             if (stderr) {
